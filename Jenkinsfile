@@ -1,11 +1,13 @@
 pipeline {
-    agent {
-        label 'dockerNode'
-    }
+	agent any
+    // agent {
+        // label 'dockerNode'
+    // }
     stages {
         stage('checkout') {
             steps {
-                sh returnStatus: true, script: 'docker --version'
+		echo "${params.environment}"
+                // sh returnStatus: true, script: 'docker --version'
             }
         }
     }
